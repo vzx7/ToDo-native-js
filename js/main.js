@@ -6,7 +6,8 @@
 */
 ;(function(d, l, s) {
     "use strict";
-    var that = this;
+    var that = this,
+    tasks = JSON.parse(s.getItem("tasks"));
     /**
     * Sorting elements
     * @param {Boolean} type
@@ -136,7 +137,7 @@
         /**
         * Object ToDo
         */
-        tasks: JSON.parse(s.getItem("tasks")),
+        tasks: tasks || [],
         creatorTableTasks: function(typeSorting) {
             if (this.tasks.length > 0) {
                 var trOrder = 0, 
